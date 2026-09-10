@@ -108,7 +108,7 @@ var CHECKPOINTS = [
 
 var GAME_CONFIG = {
   titleZh: "火龍出巡",
-  subtitle: { en: "Fire Dragon Checkpoint Hunt", zh: "檢查站尋寶之旅" },
+  subtitle: { en: "Fire Dragon Checkpoint Hunt", zh: "尋寶任務" },
   pointsPerCheckpoint: 25,
   completionMessage: {
     en: "The fire dragon is ready to return home! Borrow any book this week to complete the hunt. Show your completion screen at the 6/F counter to receive your reward.",
