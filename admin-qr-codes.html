@@ -84,7 +84,7 @@
     <h1>🐉 Print checkpoint QR codes</h1>
     <p class="subtitle">Staff-only helper — this page is never linked from the student-facing app.</p>
     <label for="baseUrl">Your published site URL</label>
-    <input id="baseUrl" type="text" placeholder="https://your-username.github.io/your-repo/" autocomplete="off" />
+    <input id="baseUrl" type="text" placeholder="https://tselong.github.io/midautumn2026/" autocomplete="off" />
     <p class="hint">Paste the GitHub Pages URL once it's live and the four QR codes below update automatically. The QR codes are drawn locally in your browser (using a bundled copy of the open-source <code>qrcode-generator</code> library), so this works even without an internet connection once the page itself is open.</p>
   </div>
 
@@ -99,7 +99,7 @@
   <script>
     var gridEl = document.getElementById("grid");
     var inputEl = document.getElementById("baseUrl");
-    var PLACEHOLDER = "https://your-username.github.io/your-repo/";
+    var PLACEHOLDER = "https://tselong.github.io/midautumn2026/";
 
     function buildUrl(base, id) {
       var b = (base || "").trim() || PLACEHOLDER;
