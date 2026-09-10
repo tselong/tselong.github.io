@@ -46,8 +46,8 @@ var CHECKPOINTS = [
     },
     correctIndex: 3,
     clue: {
-      en: "The dragon is calling you to a place where you can create something with a 3D printer.",
-      zh: "火龍正呼喚你前往一個可以用3D打印機製作物件的地方。"
+      en: "The dragon is calling you to a place where you can create an actual 3D object.",
+      zh: "火龍正呼喚你前往一個可以製作3D物件的地方。"
     }
   },
   {
@@ -70,7 +70,7 @@ var CHECKPOINTS = [
   },
   {
     id: "C",
-    name: { en: "Study Box", zh: "討論室" },
+    name: { en: "Study Box", zh: "Study Box" },
     icon: "💬",
     question: {
       en: "Which email account can be used for room booking in the LRC?",
@@ -96,7 +96,7 @@ var CHECKPOINTS = [
     },
     options: {
       en: ["The screen turns off", "A book with a QR code link to it!", "A price tag", "An error message"],
-      zh: ["螢幕熄滅", "顯示該書籍連結的QR code!", "價錢牌", "錯誤訊息"]
+      zh: ["螢幕熄滅", "該書籍連結的QR code!", "價錢牌", "錯誤訊息"]
     },
     correctIndex: 1,
     clue: {
