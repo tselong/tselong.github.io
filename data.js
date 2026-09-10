@@ -88,7 +88,7 @@ var CHECKPOINTS = [
   },
   {
     id: "D",
-    name: { en: "e-Read Kiosk", zh: "電子閱讀機" },
+    name: { en: "e-Read Kiosk", zh: "電子閱讀展板" },
     icon: "📱",
     question: {
       en: "Try touching a book on the screen. What do you see?",
