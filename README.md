@@ -1,1 +1,1 @@
-
+A mobile-first, bilingual (Traditional Chinese / English) QR checkpoint hunt for the MHLRC's Mid-Autumn Festival week. Students scan hidden QR codes, answer a quick question at each stop, and light up the fire dragon one scale at a time. Borrowing a book after finishing all four checkpoints unlocks the reward.
