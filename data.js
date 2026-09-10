@@ -56,7 +56,7 @@ var CHECKPOINTS = [
     icon: "📰",
     question: {
       en: "What is the maximum loan period for back issues of periodicals for students, including renewals?",
-      zh: "學生借閱過期期刊(連同續借在內)的最長借閱期限是多久?"
+      zh: "學生借閱過期期刊的最長借閱期限是多久(連同續借在內)?"
     },
     options: {
       en: ["4 days", "8 days", "12 days", "24 days"],
@@ -74,7 +74,7 @@ var CHECKPOINTS = [
     icon: "💬",
     question: {
       en: "Which email account can be used for room booking in the LRC?",
-      zh: "在LRC(學習資源中心)預約房間時,可以使用哪個電郵帳戶?"
+      zh: "在LRC預約房間時,可以使用哪個電郵帳戶?"
     },
     options: {
       en: ["Gmail", "Hotmail", "VTC email", "All of the above"],
@@ -111,7 +111,7 @@ var GAME_CONFIG = {
   subtitle: { en: "Fire Dragon Checkpoint Hunt", zh: "檢查站尋寶之旅" },
   pointsPerCheckpoint: 25,
   completionMessage: {
-    en: "The fire dragon is ready to return home! Borrow any library book this week to complete the hunt. Show your completion screen at the counter to receive your reward.",
-    zh: "火龍準備回家了!本週內借閱任何一本圖書館書籍,即可完成任務。請在櫃檯出示你的完成畫面,領取小禮物。"
+    en: "The fire dragon is ready to return home! Borrow any book this week to complete the hunt. Show your completion screen at the 6/F counter to receive your reward.",
+    zh: "火龍準備回家了!本週內借閱任何一本書籍,即可完成任務。請在6/F櫃檯出示你的完成畫面,領取小禮物。"
   }
 };

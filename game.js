@@ -17,7 +17,7 @@
 
   var STRINGS = {
     en: {
-      nicknameBlurb: "Help the fire dragon light its way through the library. Find four checkpoints, solve a question at each, then borrow a book to complete the journey.",
+      nicknameBlurb: "Help the fire dragon light its way through the LRC. Find four checkpoints, solve a question at each, then borrow a book to complete the journey.",
       checkpointFoundNote: "You found a checkpoint! Enter your name to start your journey.",
       nicknameLabel: "What should the dragon call you?",
       nicknamePlaceholder: "Your name or nickname",
@@ -29,7 +29,7 @@
       nextClueLabel: "📜 Your next clue",
       continueBtn: "Continue Your Journey",
       alreadyFound: "You already found the {icon} {name} ✅",
-      keepExploring: "Keep exploring the library to find the other checkpoints.",
+      keepExploring: "Keep exploring the LRC to find the other checkpoints.",
       backBtn: "Back to Your Journey",
       invalidTitle: "🐉 This checkpoint isn't part of the hunt",
       invalidBody: "The QR code doesn't match a checkpoint in the current hunt. Double-check the code, or head back to your journey.",
@@ -38,9 +38,9 @@
       playAgainBtn: "Play Again 🔁",
       playAgainConfirm: "Play again? You'll need to solve all four checkpoints again — make sure you've already shown this screen at the counter.",
       checkpointsFound: "{done} of {total} checkpoints found",
-      findSpot: "Find this spot in the library and scan its QR code.",
+      findSpot: "Find this spot in the LRC and scan its QR code.",
       beginJourneyLabel: "🐉 Begin your journey",
-      lookForQr: "Look for a glowing QR code hidden somewhere in the library to find your first checkpoint.",
+      lookForQr: "Look for a glowing QR code hidden somewhere in the LRC to find your first checkpoint.",
       restartLink: "Restart my journey",
       restartConfirm: "Restart your journey? This will erase your name and progress on this device.",
       clueGivenLabel: "Clue given",
@@ -48,30 +48,30 @@
       langToggle: "中文"
     },
     zh: {
-      nicknameBlurb: "幫助火龍點亮牠在圖書館的旅程。找到四個檢查點,在每個檢查點答對問題,然後借閱一本書完成旅程。",
-      checkpointFoundNote: "你找到一個檢查點了!請輸入你的名字,開始你的旅程。",
+      nicknameBlurb: "幫助火龍點亮牠在LRC的旅程。找到四個任務點,在每個任務點答對問題,然後借閱一本書完成旅程。",
+      checkpointFoundNote: "你找到一個任務點了!請輸入你的名字,開始你的旅程。",
       nicknameLabel: "火龍應該怎麼稱呼你?",
       nicknamePlaceholder: "你的名字或暱稱",
       beginBtn: "開始尋寶 🐉",
-      checkpointBadge: "🐉 火龍檢查點 #{n}",
-      leadText: "火龍來到了一個新的檢查點。",
+      checkpointBadge: "🐉 火龍任務點 #{n}",
+      leadText: "火龍來到了一個新的任務點。",
       notQuite: "不太對,再試一次吧!",
       youFound: "你找到了{icon} {name}!",
       nextClueLabel: "📜 你的下一個提示",
       continueBtn: "繼續你的旅程",
       alreadyFound: "你已經找到{icon} {name}了 ✅",
-      keepExploring: "繼續探索圖書館,尋找其他檢查點吧。",
+      keepExploring: "繼續探索LRC,尋找其他任務點吧。",
       backBtn: "返回你的旅程",
-      invalidTitle: "🐉 這個檢查點不屬於本次尋寶遊戲",
-      invalidBody: "這個QR code與本次尋寶遊戲的檢查點不符。請確認QR code是否正確,或返回你的旅程。",
+      invalidTitle: "🐉 這個任務點不屬於本次尋寶遊戲",
+      invalidBody: "這個QR code與本次尋寶遊戲的任務點不符。請確認QR code是否正確,或返回你的旅程。",
       journeyComplete: "🎉 旅程完成了,{name}!",
       keepScreenOpen: "📸 請保持此畫面開啟,或截圖,以便在櫃檯出示。",
       playAgainBtn: "再玩一次 🔁",
-      playAgainConfirm: "要再玩一次嗎?你需要重新完成全部四個檢查點——請先確認你已經在櫃檯出示過這個畫面。",
-      checkpointsFound: "已找到 {done}/{total} 個檢查點",
-      findSpot: "在圖書館裡找到這個地方,掃描它的QR code。",
+      playAgainConfirm: "要再玩一次嗎?你需要重新完成全部四個任務點——請先確認你已經在櫃檯出示過這個畫面。",
+      checkpointsFound: "已找到 {done}/{total} 個任務點",
+      findSpot: "在LRC裡找到這個地方,掃描它的QR code。",
       beginJourneyLabel: "🐉 開始你的旅程",
-      lookForQr: "在圖書館裡尋找一個發光的QR code,找出你的第一個檢查點。",
+      lookForQr: "在LRC裡尋找一個發光的QR code,找出你的第一個任務點。",
       restartLink: "重新開始旅程",
       restartConfirm: "要重新開始旅程嗎?這將會清除此裝置上的名字和進度。",
       clueGivenLabel: "已有提示",
@@ -446,7 +446,7 @@
 
   function renderComplete(state) {
     var stamps = "";
-    for (var i = 0; i < CHECKPOINTS.length; i++) stamps += '<span class="stamp">印</span>';
+    for (var i = 0; i < CHECKPOINTS.length; i++) stamps += '<span class="stamp">✔</span>';
 
     render(
       '<div class="screen screen-complete">' +
