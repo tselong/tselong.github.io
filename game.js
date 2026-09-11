@@ -435,7 +435,7 @@
 
   function renderComplete(state) {
     var stamps = "";
-    for (var i = 0; i < CHECKPOINTS.length; i++) stamps += '<span class="stamp">印</span>';
+    for (var i = 0; i < CHECKPOINTS.length; i++) stamps += '<span class="stamp">✔</span>';
 
     render(
       '<div class="screen screen-complete">' +
