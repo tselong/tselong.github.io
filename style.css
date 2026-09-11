@@ -142,12 +142,6 @@ body {
   max-width: 230px;
   opacity: 0.92;
 }
-.dragon-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  overflow: visible;
-}
 
 /* ---------------- titles ---------------- */
 
@@ -473,41 +467,35 @@ body {
 
 .card-clue { border: 2px solid var(--gold); }
 
-/* ---------------- dragon svg parts ---------------- */
+/* ---------------- dragon hero artwork ---------------- */
 
-.dragon-tail, .dragon-body {
-  fill: none;
-  stroke-linecap: round;
+.dragon-wrap {
+  position: relative;
+  width: 100%;
+  line-height: 0;
 }
-.dragon-tail { stroke: #6b5a4a; stroke-width: 10; }
-.dragon-body { stroke: url(#bodyGradient); stroke-width: 16; }
-
-.dragon-face { fill: #4a4056; stroke: #8a6a45; stroke-width: 2; }
-.dragon-horn { fill: #8a6a45; }
-.dragon-whisker { fill: none; stroke: #8a6a45; stroke-width: 2; stroke-linecap: round; }
-.dragon-eye { fill: #746b82; transition: fill 0.4s ease; }
-.dragon-pearl { fill: #3a3446; transition: fill 0.4s ease; }
-
-.dragon-head.is-fully-lit .dragon-pearl {
-  fill: url(#pearlGradient);
-  filter: drop-shadow(0 0 8px rgba(232, 182, 76, 0.95));
-  animation: pulse-glow 2.2s ease-in-out infinite;
-}
-.dragon-head.is-fully-lit .dragon-eye {
-  fill: #ff6b4a;
-  filter: drop-shadow(0 0 4px rgba(255, 107, 74, 0.9));
+.dragon-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.6s ease;
 }
 
-.scale-marker {
-  fill: #423a4d;
-  stroke: #6b5a4a;
-  stroke-width: 2;
-  transition: fill 0.4s ease;
+.dragon-marker {
+  position: absolute;
+  width: 5.5%;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: transparent;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  pointer-events: none;
 }
-.scale-marker.is-lit {
-  fill: url(#scaleLitGradient);
-  stroke: var(--gold-bright);
-  filter: drop-shadow(0 0 6px rgba(232, 182, 76, 0.9));
+.dragon-marker.is-lit {
+  border: 2px solid var(--gold-bright);
+  background: radial-gradient(circle at 35% 35%, #ffe9a8, #d4482f);
+  box-shadow: 0 0 14px rgba(232, 182, 76, 0.85);
   animation: pulse-glow 2.4s ease-in-out infinite;
 }
 @keyframes pulse-glow {
@@ -515,10 +503,18 @@ body {
   50% { opacity: 0.78; }
 }
 
+@keyframes dragon-glow-pulse {
+  0%, 100% { filter: grayscale(0%) brightness(1.04) saturate(130%) drop-shadow(0 0 14px rgba(232, 182, 76, 0.55)); }
+  50% { filter: grayscale(0%) brightness(1.08) saturate(140%) drop-shadow(0 0 26px rgba(232, 182, 76, 0.85)); }
+}
+.dragon-wrap.is-fully-lit .dragon-image {
+  animation: dragon-glow-pulse 2.4s ease-in-out infinite;
+}
+
 /* ---------------- motion & accessibility ---------------- */
 
 @media (prefers-reduced-motion: reduce) {
-  .star, .lantern, .scale-marker.is-lit, .dragon-pearl,
+  .star, .lantern, .dragon-marker.is-lit, .dragon-wrap.is-fully-lit .dragon-image,
   .trail-node--clue .trail-dot, .btn-answer.is-wrong, .screen {
     animation: none !important;
   }

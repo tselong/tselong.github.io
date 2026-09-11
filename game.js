@@ -253,55 +253,44 @@
     starsEl.innerHTML = html;
   }
 
-  /* ---------------- dragon hero svg ---------------- */
+  /* ---------------- dragon hero artwork ---------------- */
+  /* The four points below are calibrated to the orange pole-joints already
+     drawn in assets/dragon.png (as % of the image's width/height), so the
+     glow markers land exactly on them regardless of how large the image
+     is rendered. */
 
   var MARKER_POINTS = [
-    { cx: 84, cy: 81 },
-    { cx: 154, cy: 87 },
-    { cx: 226, cy: 137 },
-    { cx: 295, cy: 146 }
+    { x: 21.83, y: 34.5 },
+    { x: 36.08, y: 57.5 },
+    { x: 57.17, y: 32.63 },
+    { x: 83.58, y: 55.5 }
   ];
 
   function dragonHero(litCount, fullyLit) {
+    var total = MARKER_POINTS.length;
+    var progress = total > 0 ? litCount / total : 0;
+    var grayscale = Math.round(40 - progress * 40);
+    var brightness = (0.85 + progress * 0.2).toFixed(2);
+    var saturate = Math.round(70 + progress * 60);
+    var filterStyle = "grayscale(" + grayscale + "%) brightness(" + brightness + ") saturate(" + saturate + "%)";
+
     var markersHtml = "";
     for (var i = 0; i < MARKER_POINTS.length; i++) {
       var lit = i < litCount;
       var p = MARKER_POINTS[i];
       markersHtml +=
-        '<circle class="scale-marker' + (lit ? " is-lit" : "") + '" cx="' +
-        p.cx + '" cy="' + p.cy + '" r="11"></circle>';
+        '<span class="dragon-marker' + (lit ? " is-lit" : "") + '" style="left:' +
+        p.x + "%; top:" + p.y + '%;"></span>';
     }
-    var headClass = "dragon-head" + (fullyLit ? " is-fully-lit" : "");
-    var ariaLabel = t("dragonAriaLabel", { lit: litCount, total: MARKER_POINTS.length });
+
+    var ariaLabel = t("dragonAriaLabel", { lit: litCount, total: total });
+
     return (
-      '<svg class="dragon-svg" viewBox="0 0 400 195" xmlns="http://www.w3.org/2000/svg" ' +
-      'role="img" aria-label="' + escapeHtml(ariaLabel) + '">' +
-      "<defs>" +
-      '<linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="0%">' +
-      '<stop offset="0%" stop-color="#5b4a3f"/>' +
-      '<stop offset="100%" stop-color="#8a6a45"/>' +
-      "</linearGradient>" +
-      '<radialGradient id="pearlGradient" cx="35%" cy="35%" r="65%">' +
-      '<stop offset="0%" stop-color="#fff6d8"/>' +
-      '<stop offset="100%" stop-color="#e8b64c"/>' +
-      "</radialGradient>" +
-      '<radialGradient id="scaleLitGradient" cx="35%" cy="35%" r="65%">' +
-      '<stop offset="0%" stop-color="#ffe9a8"/>' +
-      '<stop offset="100%" stop-color="#d4482f"/>' +
-      "</radialGradient>" +
-      "</defs>" +
-      '<path class="dragon-tail" d="M20,142 C10,150 8,164 18,176"></path>' +
-      '<path class="dragon-body" d="M20,142 C70,60 130,60 190,112 C250,164 310,164 350,95"></path>' +
-      '<g class="' + headClass + '" transform="translate(350,95)">' +
-      '<path class="dragon-horn" d="M-4,-16 L-12,-34 L0,-20 Z"></path>' +
-      '<path class="dragon-horn" d="M10,-18 L18,-36 L6,-22 Z"></path>' +
-      '<path class="dragon-whisker" d="M-18,6 Q-32,2 -42,10"></path>' +
-      '<ellipse class="dragon-face" cx="8" cy="0" rx="24" ry="15"></ellipse>' +
-      '<circle class="dragon-eye" cx="16" cy="-4" r="3"></circle>' +
-      '<circle class="dragon-pearl" cx="38" cy="-4" r="7"></circle>' +
-      "</g>" +
+      '<div class="dragon-wrap' + (fullyLit ? " is-fully-lit" : "") + '">' +
+      '<img class="dragon-image" src="assets/dragon.png" alt="' +
+      escapeHtml(ariaLabel) + '" style="filter:' + filterStyle + ';" />' +
       markersHtml +
-      "</svg>"
+      "</div>"
     );
   }
 
@@ -446,7 +435,7 @@
 
   function renderComplete(state) {
     var stamps = "";
-    for (var i = 0; i < CHECKPOINTS.length; i++) stamps += '<span class="stamp">✔</span>';
+    for (var i = 0; i < CHECKPOINTS.length; i++) stamps += '<span class="stamp">印</span>';
 
     render(
       '<div class="screen screen-complete">' +
