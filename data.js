@@ -88,7 +88,7 @@ var CHECKPOINTS = [
   },
   {
     id: "D",
-    name: { en: "e-Read Kiosk", zh: "電子閱讀機" },
+    name: { en: "e-Read Kiosk", zh: "電子閱讀展板" },
     icon: "📱",
     question: {
       en: "Try touching a book on the screen. What do you see?",
@@ -96,7 +96,7 @@ var CHECKPOINTS = [
     },
     options: {
       en: ["The screen turns off", "A book with a QR code link to it!", "A price tag", "An error message"],
-      zh: ["螢幕熄滅", "顯示該書籍連結的QR code!", "價錢牌", "錯誤訊息"]
+      zh: ["螢幕熄滅", "該書籍連結的QR code!", "價錢牌", "錯誤訊息"]
     },
     correctIndex: 1,
     clue: {
@@ -108,7 +108,7 @@ var CHECKPOINTS = [
 
 var GAME_CONFIG = {
   titleZh: "火龍出巡",
-  subtitle: { en: "Fire Dragon Checkpoint Hunt", zh: "檢查站尋寶之旅" },
+  subtitle: { en: "Fire Dragon Checkpoint Hunt", zh: "尋寶之旅" },
   pointsPerCheckpoint: 25,
   completionMessage: {
     en: "The fire dragon is ready to return home! Borrow any library book this week to complete the hunt. Show your completion screen at the counter to receive your reward.",
